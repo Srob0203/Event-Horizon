@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Horizon</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='design.css') }}">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+      </style>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        </style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Ubuntu:wght@300&display=swap');
+  </style>
+  
+  </head>
+  <body>
+
+    <h1>Event Horizon</h1>
+    <div id="rectangle-container">
+        
+    </div>
+    <div id="mid"> 
+      <div id="bar">
+        <div id="arrow-container">
+        <button id="arrow1" >
+          <img src="https://files.catbox.moe/bngr5g.png"width=15px;height=15px;>
+        </button>
+        <button id="arrow2"><img src="https://files.catbox.moe/noawpq.png" width=15px;height=15px;></button>
+        </div>
+    </div>
+    <div id="viewcontainer">
+      <div class="timesrow">
+          <div class="title"></div>
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowSunday">
+          <div class="title">SUN</div>
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowMonday">
+          <div class="title">MON</div>
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowTuesday">
+          <div class="title">TUE</div> 
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowWednesday">
+          <div class="title">WED</div> 
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowThursday">
+          <div class="title">THU</div> 
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowFriday">
+          <div class="title">FRI</div> 
+          <div class="content"></div>
+      </div>
+      <div class="dayrow" id="dayrowSaturday">
+          <div class="title">SAT</div>
+          <div class="content"></div>
+      </div>
+  </div>
+  </div>
+
+        </div>
+      
+      
+        <div id="scheduleNameContainer" style="display: none">
+        <div class="schedule-name">Schedule Name</div>
+    </div>
+
+    
+  </div>
+    <div id="addClassModal" class="modal" tabindex="-1">
+      <div class="modal-dialog"><div class="modal-content">
+          <div class="modal-header">
+<div class="container-form">
+              <h5 class="modal-title">Add Event</h5>
+          </div>
+          <div class="modal-body">
+              <form id="addClassForm">
+                  <div class="form-floating mb-3 has-validation">
+                      <input id="addClassDisplayName" type="text" class="form-control" placeholder="English 1110" name="displayName"/>
+                      <label for="addClassDisplayName" class="form-label">Event Name</label>
+                      <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="form-floating mb-3 has-validation">
+                      <input id="addClassClassID" type="text" class="form-control" placeholder="ENG-1110-001"/>
+                      <label for="addClassClassID" class="form-label">Event ID</label>
+                      <div class="invalid-feedback" id="addClassClassIDFeedback"></div>
+                  </div>
+                  <div class="form-floating mb-3 has-validation">
+                      <input id="addClassStartTime" type="text" class="form-control" placeholder="8:00 AM"/>
+                      <label for="addClassStartTime" class="form-label">Start Time</label>
+                      <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <input id="addClassEndTime" type="text" class="form-control" placeholder="9:30 AM"/>
+                      <label for="addClassEndTime" class="form-label">End Time</label>
+                      <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="mb-3">
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDaySunday" value="monday">
+                          <label class="form-check-label" for="addClassDaySunday">SUN</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDayMonday" value="monday">
+                          <label class="form-check-label" for="addClassDayMonday">MON</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDayTuesday" value="tuesday">
+                          <label class="form-check-label" for="addClassDayTuesday">TUE</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDayWednesday" value="wednesday">
+                          <label class="form-check-label" for="addClassDayWednesday">WED</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDayThursday" value="thursday">
+                          <label class="form-check-label" for="addClassDayThursday">THU</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDayFriday" value="friday">
+                          <label class="form-check-label" for="addClassDayFriday">FRI</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="addClassDaySaturday" value="monday">
+                          <label class="form-check-label" for="addClassDayMonday">SAT</label>
+                      </div>
+                      <div id="addClassDayFeedback" style="display: none">
+                          <span style="color:red">Must select at least one day.</span>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="addClassColor" class="form-label">Color</label>
+                      <div class="input-group">
+                          <span class="input-group-text color-preview-box">&nbsp;&nbsp;</span>
+                          <select class="form-control" id="addClassColor">
+                              <option value="blue" selected>Blue</option>
+                              <option value="green">Green</option>
+                              <option value="lightblue">Light Blue</option>
+                              <option value="orange">Orange</option>
+                              <option value="pink">Pink</option>
+                              <option value="purple">Purple</option>
+                              <option value="red">Red</option>
+                              <option value="yellow">Yellow</option>
+                          </select>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn-primary">Add</button>
+              </form>
+          </div>
+      </div></div>
+  </div>
+</div>
+
+
+  </body>
+</html>

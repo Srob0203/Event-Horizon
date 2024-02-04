@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        .todo {
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+            border-radius: 15px; 
+            width: 350px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>FlaskCourses</h1>
+    <hr>
+    <div class="course_code">
+    <form method="post">
+        <p>
+            <b><label for="course_code">Course Code</label></b>
+        </p>
+        <p>
+            <input type="text" name="course_code" 
+            placeholder="AAAA XXXX">
+        </p>
+        <p>
+            <b><label for="course_name">Course Name</label></b>
+        </p>
+        <p>
+            <input type="text" name="course_name">
+        </p>
+
+        <p>
+            <b><label for="course_section">Course Section</label></b>
+        </p>
+        <p>
+            <input type="text" name="course_section"
+            placeholder="xxx">
+        </p>
+        <p>
+            <b><label for="class_name">Class Name</label></b>
+        </p>
+        <p>
+            <input type="text" name="class_name">
+        </p>
+        <p>
+            <b><label for="crn">Course Registration Number (CRN)</label></b>
+        </p>
+        <p>
+            <input type="text" name="crn"
+            placeholder="XXXXX">
+        </p>
+        <p>
+            <b><label for="building">Building</label></b>
+            
+        </p>
+        <p>
+            <input type="text" name="building">
+        </p>
+        <p>
+            <label for="room">Room</label>&nbsp;&nbsp;<input type="text" name="room">
+        </p>
+<!-- Day Slots
+        <p>
+            <b><label for="course_timeslots">Time Slot</label></b>
+        </p>
+        <p>
+            <label for="days">Days of the Week:</label><br>
+            <input type="checkbox" name="days[]" value="M"> Monday
+            <input type="checkbox" name="days[]" value="T"> Tuesday
+            <input type="checkbox" name="days[]" value="W"> Wednesday
+            <input type="checkbox" name="days[]" value="R"> Thursday
+            <input type="checkbox" name="days[]" value="F"> Friday
+        </p>
+-->
+<!-- Clock slots 
+        <p>
+            <label for="start_time">Start Time:</label>
+            <input type="time" name="start_time" required>
+        </p>
+        <p>
+            <label for="end_time">End Time:</label>
+            <input type="time" name="end_time" required>
+        </p>
+-->
+
+<button type="submit">Submit</button>
+</form>
+<hr>
+{% for todo in todos %}
+    <div class="todo">
+        <div style="display: flex; justify-content: space-around">
+          <div><b>{{ todo['course_code'] }}</b></div>   <div>{{ todo['course_section'] }}</div><br>
+          </div>  
+          <hr>
+          <div style="display: flex; justify-content: space-around">
+          <div><i>{{ todo['course_name'] }}</i></div><div>{{ todo['building'] }} {{ todo['room'] }}</div><br>
+          </div>
+          {{ todo['class_name'] }} <br>
+            {{ todo['crn'] }}<br>
+
+<hr>
+<form method="POST" action="{{ url_for('delete', id=todo['_id']) }}">
+    <input type="submit" value="Delete Event"
+                   onclick="return confirm('Are you sure you want to delete this entry?')">
+        </form>
+    </div>
+{% endfor %}
+
+</body>
+</html>

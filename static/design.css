@@ -1,0 +1,88 @@
+
+#rectangle-container{
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+#rectangle{
+    width:950px;
+    height:350px;
+    background:#f1f7f6;
+    border-radius:5px;
+    
+}
+#mid{
+    background:#66959c;
+    width:950px;
+    height: 475px;
+
+
+}
+#bar{
+    background:#c4e9ea;
+    width:950px;
+    height:30px;
+}
+#timeblock{
+    width:20px;
+    height:60px;
+    background:darkblue;
+}
+
+#viewcontainer{
+    font-family: 'Audiowide', sans-serif;
+   display: flex;
+    justify-content: space-between;
+
+
+
+}
+.dayrow{
+margin: auto;
+margin-top:-25px;
+
+}
+.timesrow{
+    background:black;
+}
+h1{
+    color:white;
+    text-align: center;
+    font-family: 'Audiowide', sans-serif;
+
+}
+.modal{
+    margin-top:350px;
+font-family: 'Ubuntu', sans-serif;
+color:white;
+margin-right:40px;
+margin-bottom: 20px;
+}
+#container-form{
+display:flex;
+justify-content: center;
+}
+
+h5{
+    margin-left:90px;
+}
+
+#arrow-container{
+    display:flex;
+    justify-content: space-between;
+    
+}
+#arrow1{
+margin-left:5px;
+margin-top:2px;
+
+}
+#arrow2{
+    margin-right:5px;
+    margin-top:2px;
+
+}
+
+body{background-image: url("https://files.catbox.moe/qij7zv.png");
+
+}
